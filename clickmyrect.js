@@ -25,5 +25,5 @@ x1=10;
 y1=110;
 var cell_4 = new Rect(x1,y1,x2,y2);
 cell_4.addTo(stage);
-cell_4.fill('brown');
+cell_4.fill('brown');;;
 */
