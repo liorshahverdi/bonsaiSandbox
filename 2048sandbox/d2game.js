@@ -87,5 +87,5 @@ var dg = function(){
 	tile_15.addTo(stage);
 	tile_15.fill('white');
 }
-
 dg();
+
