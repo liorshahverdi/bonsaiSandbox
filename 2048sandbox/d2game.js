@@ -1,4 +1,8 @@
 var dg = function(){
+	/*var frame = new Rect(0,0,380, 380);
+	frame.addTo(stage);
+	frame.fill('blue');
+	//Need to find a nice way to incorporate this*/
 	var back_grid = new Rect(0, 0, 375, 375);
 	back_grid.addTo(stage);
 	back_grid.fill('gray');
@@ -105,9 +109,33 @@ var draw_a_2_node = function(posx, posy) {
 
 	var text = new Text('2');
 	text.attr({
-	  x: (posx - 5), y: (posy - 7), textFillColor: 'black', opacity: 0.5,
-	  fontFamily: 'Arial', fontSize: 20, fontWeight: 'bold'
+	  x: (posx - 6), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
 	stage.addChild(text);
 }
-draw_a_2_node(50,50);
+
+var draw_a_4_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_2_backbun = new Circle(posx, posy, 40, 100);
+	node_2_backbun.addTo(stage);
+	node_2_backbun.fill('orange');
+
+	var node_2_meat = new Circle(posx, posy, 35, 100);
+	node_2_meat.addTo(stage);
+	node_2_meat.fill('white');
+
+	var node_2_frontbun = new Circle(posx, posy, 30, 100);
+	node_2_frontbun.addTo(stage);
+	node_2_frontbun.fill('orange');
+
+	var text = new Text('4');
+	text.attr({
+	  x: (posx - 6), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
+//draw_a_2_node(50,50);
+draw_a_4_node(50,140); //[50][140] is at grid [1][0]
+ 
