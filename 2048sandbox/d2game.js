@@ -89,3 +89,18 @@ var dg = function(){
 }
 dg();
 
+var draw_a_2_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_2_backbun = new Circle(posx, posy, 40, 100);
+	node_2_backbun.addTo(stage);
+	node_2_backbun.fill('red');
+
+	var node_2_meat = new Circle(posx, posy, 35, 100);
+	node_2_meat.addTo(stage);
+	node_2_meat.fill('white');
+
+	var node_2_frontbun = new Circle(posx, posy, 30, 100);
+	node_2_frontbun.addTo(stage);
+	node_2_frontbun.fill('red');
+}
+draw_a_2_node(50,50);
