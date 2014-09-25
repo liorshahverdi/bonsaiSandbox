@@ -5,7 +5,8 @@ var draw_grid = function(){
 	//Need to find a nice way to incorporate this*/
 	var back_grid = new Rect(0, 0, 375, 375);
 	back_grid.addTo(stage);
-	back_grid.fill('gray');
+	var myColor = new color('green').midpoint('white'); 
+	back_grid.fill(myColor);
 
 	var a=50; var b=50; var c=40; var d=100; 
 
@@ -366,6 +367,29 @@ var draw_a_4096_node = function(posx, posy) {
 	stage.addChild(text);
 }
 
+var draw_a_8192_node = function(posx, posy){
+	var node_backbun = new Circle(posx, posy, 40, 100);
+	node_backbun.addTo(stage);
+	var myColor = new color('indigo').midpoint('white'); // -> pink
+
+	node_backbun.fill(myColor);
+
+	var node_meat = new Circle(posx, posy, 35, 100);
+	node_meat.addTo(stage);
+	node_meat.fill('white');
+
+	var node_frontbun = new Circle(posx, posy, 30, 100);
+	node_frontbun.addTo(stage);
+	node_frontbun.fill(myColor);
+
+	var text = new Text('8192');
+	text.attr({
+	  x: (posx-28), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
+
 draw_grid();
 draw_a_2_node(50,50);
 draw_a_4_node(50,140); //[50][140] is at grid [1][0]
@@ -379,3 +403,4 @@ draw_a_512_node(230, 50);
 draw_a_1024_node(230, 140);
 draw_a_2048_node(230, 230);
 draw_a_4096_node(230, 320);
+draw_a_8192_node(320, 50);
