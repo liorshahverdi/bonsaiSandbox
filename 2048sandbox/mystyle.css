@@ -5,7 +5,7 @@
 }
 
 body{
-	background-color: purple;
+	background: radial-gradient(red, green, yellow); /* Standard syntax */
 }
 
 h1.titleHead, p.blockTextFooter {
