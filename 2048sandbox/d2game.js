@@ -246,7 +246,53 @@ var draw_a_128_node = function(posx, posy) {
 	stage.addChild(text);
 }
 
+var draw_a_256_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_backbun = new Circle(posx, posy, 40, 100);
+	node_backbun.addTo(stage);
+	var myColor = new color('red').midpoint('white'); // -> pink
 
+	node_backbun.fill(myColor);
+
+	var node_meat = new Circle(posx, posy, 35, 100);
+	node_meat.addTo(stage);
+	node_meat.fill('white');
+
+	var node_frontbun = new Circle(posx, posy, 30, 100);
+	node_frontbun.addTo(stage);
+	node_frontbun.fill(myColor);
+
+	var text = new Text('256');
+	text.attr({
+	  x: (posx-20), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
+
+var draw_a_512_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_backbun = new Circle(posx, posy, 40, 100);
+	node_backbun.addTo(stage);
+	var myColor = new color('orange').midpoint('white'); // -> pink
+
+	node_backbun.fill(myColor);
+
+	var node_meat = new Circle(posx, posy, 35, 100);
+	node_meat.addTo(stage);
+	node_meat.fill('white');
+
+	var node_frontbun = new Circle(posx, posy, 30, 100);
+	node_frontbun.addTo(stage);
+	node_frontbun.fill(myColor);
+
+	var text = new Text('512');
+	text.attr({
+	  x: (posx-20), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
 
 draw_grid();
 draw_a_2_node(50,50);
@@ -256,3 +302,5 @@ draw_a_16_node(50, 320);//[50][320] is at grid [3][0]
 draw_a_32_node(140, 50);//[50][320] is at grid [3][0]
 draw_a_64_node(140, 140);
 draw_a_128_node(140, 230);
+draw_a_256_node(140, 320);
+draw_a_512_node(230, 50);
