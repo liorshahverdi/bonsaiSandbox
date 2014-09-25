@@ -95,46 +95,51 @@ var draw_grid = function(){
 
 var draw_a_2_node = function(posx, posy) {
 	// 50 50 is at grid[0][0]
+	var node2 = new Group();
+
 	var node_backbun = new Circle(posx, posy, 40, 100);
-	node_backbun.addTo(stage);
 	node_backbun.fill('red');
+	node2.addChild(node_backbun);
 
 	var node_meat = new Circle(posx, posy, 35, 100);
-	node_meat.addTo(stage);
 	node_meat.fill('white');
+	node2.addChild(node_meat);
 
 	var node_frontbun = new Circle(posx, posy, 30, 100);
-	node_frontbun.addTo(stage);
 	node_frontbun.fill('red');
+	node2.addChild(node_frontbun);
 
 	var text = new Text('2');
 	text.attr({
 	  x: (posx - 6), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
 	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
-	stage.addChild(text);
+	node2.addChild(text);
+	stage.addChild(node2);
 }
 
 var draw_a_4_node = function(posx, posy) {
-	// 50 50 is at grid[0][0]
+	var node4 = new Group();
+
 	var node_backbun = new Circle(posx, posy, 40, 100);
-	node_backbun.addTo(stage);
 	node_backbun.fill('orange');
+	node4.addChild(node_backbun);
 
 	var node_meat = new Circle(posx, posy, 35, 100);
-	node_meat.addTo(stage);
 	node_meat.fill('white');
+	node4.addChild(node_meat);
 
 	var node_frontbun = new Circle(posx, posy, 30, 100);
-	node_frontbun.addTo(stage);
 	node_frontbun.fill('orange');
+	node4.addChild(node_frontbun);
 
 	var text = new Text('4');
 	text.attr({
 	  x: (posx - 6), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
 	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
-	stage.addChild(text);
+	node4.addChild(text);
+	stage.addChild(node4);
 }
 
 var draw_a_8_node = function(posx, posy) {
@@ -392,7 +397,7 @@ var draw_a_8192_node = function(posx, posy){
 
 draw_grid();
 draw_a_2_node(50,50);
-draw_a_4_node(50,140); //[50][140] is at grid [1][0]
+/**draw_a_4_node(50,140); //[50][140] is at grid [1][0]
 draw_a_8_node(50, 230);//[50][230] is at grid [2][0]
 draw_a_16_node(50, 320);//[50][320] is at grid [3][0]
 draw_a_32_node(140, 50);//[50][320] is at grid [3][0]
@@ -403,4 +408,4 @@ draw_a_512_node(230, 50);
 draw_a_1024_node(230, 140);
 draw_a_2048_node(230, 230);
 draw_a_4096_node(230, 320);
-draw_a_8192_node(320, 50);
+draw_a_8192_node(320, 50);*/
