@@ -102,5 +102,12 @@ var draw_a_2_node = function(posx, posy) {
 	var node_2_frontbun = new Circle(posx, posy, 30, 100);
 	node_2_frontbun.addTo(stage);
 	node_2_frontbun.fill('red');
+
+	var text = new Text('2');
+	text.attr({
+	  x: (posx - 5), y: (posy - 7), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 20, fontWeight: 'bold'
+	});
+	stage.addChild(text);
 }
 draw_a_2_node(50,50);
