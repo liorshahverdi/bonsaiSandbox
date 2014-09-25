@@ -143,69 +143,74 @@ var draw_a_4_node = function(posx, posy) {
 }
 
 var draw_a_8_node = function(posx, posy) {
-	// 50 50 is at grid[0][0]
+	var node8 = new Group();
+
 	var node_backbun = new Circle(posx, posy, 40, 100);
-	node_backbun.addTo(stage);
 	node_backbun.fill('yellow');
+	node8.addChild(node_backbun);
 
 	var node_meat = new Circle(posx, posy, 35, 100);
-	node_meat.addTo(stage);
 	node_meat.fill('white');
+	node8.addChild(node_meat);
 
 	var node_frontbun = new Circle(posx, posy, 30, 100);
-	node_frontbun.addTo(stage);
 	node_frontbun.fill('yellow');
+	node8.addChild(node_frontbun);
 
 	var text = new Text('8');
 	text.attr({
 	  x: (posx - 6), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
 	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
-	stage.addChild(text);
+	node8.addChild(text);
+	stage.addChild(node8);
 }
 
 var draw_a_16_node = function(posx, posy) {
-	// 50 50 is at grid[0][0]
+	var node16 = new Group();
 	var node_backbun = new Circle(posx, posy, 40, 100);
-	node_backbun.addTo(stage);
 	node_backbun.fill('green');
+	node16.addChild(node_backbun);
 
 	var node_meat = new Circle(posx, posy, 35, 100);
-	node_meat.addTo(stage);
 	node_meat.fill('white');
+	node16.addChild(node_meat);
 
 	var node_frontbun = new Circle(posx, posy, 30, 100);
-	node_frontbun.addTo(stage);
 	node_frontbun.fill('green');
+	node16.addChild(node_frontbun);
 
 	var text = new Text('16');
 	text.attr({
 	  x: (posx-14), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
 	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
-	stage.addChild(text);
+	node16.addChild(text);
+	stage.addChild(node16);
 }
 
 var draw_a_32_node = function(posx, posy) {
-	// 50 50 is at grid[0][0]
+	var node32 = new Group();
+
 	var node_backbun = new Circle(posx, posy, 40, 100);
-	node_backbun.addTo(stage);
 	node_backbun.fill('blue');
+	node32.addChild(node_backbun);
 
 	var node_meat = new Circle(posx, posy, 35, 100);
-	node_meat.addTo(stage);
 	node_meat.fill('white');
+	node32.addChild(node_meat);	
 
 	var node_frontbun = new Circle(posx, posy, 30, 100);
-	node_frontbun.addTo(stage);
 	node_frontbun.fill('blue');
+	node32.addChild(node_frontbun);
 
 	var text = new Text('32');
 	text.attr({
 	  x: (posx-14), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
 	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
 	});
-	stage.addChild(text);
+	node32.addChild(text);
+	stage.addChild(node32);
 }
 
 var draw_a_64_node = function(posx, posy) {
@@ -397,11 +402,11 @@ var draw_a_8192_node = function(posx, posy){
 
 draw_grid();
 draw_a_2_node(50,50);
-/**draw_a_4_node(50,140); //[50][140] is at grid [1][0]
+draw_a_4_node(50,140); //[50][140] is at grid [1][0]
 draw_a_8_node(50, 230);//[50][230] is at grid [2][0]
 draw_a_16_node(50, 320);//[50][320] is at grid [3][0]
 draw_a_32_node(140, 50);//[50][320] is at grid [3][0]
-draw_a_64_node(140, 140);
+/**draw_a_64_node(140, 140);
 draw_a_128_node(140, 230);
 draw_a_256_node(140, 320);
 draw_a_512_node(230, 50);
@@ -409,3 +414,11 @@ draw_a_1024_node(230, 140);
 draw_a_2048_node(230, 230);
 draw_a_4096_node(230, 320);
 draw_a_8192_node(320, 50);*/
+/*
+{
+	{50,50}		{140,50}	{230,50} 	{320,50}
+	{50,140}	{140,140}	{230,140}	{320,140}
+	{50,230}	{140,230}	{230,230}	{320,230}
+	{50,320}	{140,320}	{230,320}	{320,320}
+}
+*/
