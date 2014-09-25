@@ -91,7 +91,6 @@ var dg = function(){
 	tile_15.addTo(stage);
 	tile_15.fill('white');
 }
-dg();
 
 var draw_a_2_node = function(posx, posy) {
 	// 50 50 is at grid[0][0]
@@ -136,8 +135,7 @@ var draw_a_4_node = function(posx, posy) {
 	});
 	stage.addChild(text);
 }
-draw_a_2_node(50,50);
-draw_a_4_node(50,140); //[50][140] is at grid [1][0]
+
 var draw_a_8_node = function(posx, posy) {
 	// 50 50 is at grid[0][0]
 	var node_backbun = new Circle(posx, posy, 40, 100);
@@ -159,7 +157,7 @@ var draw_a_8_node = function(posx, posy) {
 	});
 	stage.addChild(text);
 }
-draw_a_8_node(50, 230);//[50][230] is at grid [2][0]
+
 var draw_a_16_node = function(posx, posy) {
 	// 50 50 is at grid[0][0]
 	var node_backbun = new Circle(posx, posy, 40, 100);
@@ -181,4 +179,31 @@ var draw_a_16_node = function(posx, posy) {
 	});
 	stage.addChild(text);
 }
+
+var draw_a_32_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_backbun = new Circle(posx, posy, 40, 100);
+	node_backbun.addTo(stage);
+	node_backbun.fill('blue');
+
+	var node_meat = new Circle(posx, posy, 35, 100);
+	node_meat.addTo(stage);
+	node_meat.fill('white');
+
+	var node_frontbun = new Circle(posx, posy, 30, 100);
+	node_frontbun.addTo(stage);
+	node_frontbun.fill('blue');
+
+	var text = new Text('32');
+	text.attr({
+	  x: (posx-14), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
+//dg();
+draw_a_2_node(50,50);
+draw_a_4_node(50,140); //[50][140] is at grid [1][0]
+draw_a_8_node(50, 230);//[50][230] is at grid [2][0]
 draw_a_16_node(50, 320);//[50][320] is at grid [3][0]
+draw_a_32_node(140, 50);//[50][320] is at grid [3][0]
