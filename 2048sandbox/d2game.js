@@ -159,4 +159,26 @@ var draw_a_8_node = function(posx, posy) {
 	});
 	stage.addChild(text);
 }
-draw_a_8_node(50, 230);
+draw_a_8_node(50, 230);//[50][230] is at grid [2][0]
+var draw_a_16_node = function(posx, posy) {
+	// 50 50 is at grid[0][0]
+	var node_backbun = new Circle(posx, posy, 40, 100);
+	node_backbun.addTo(stage);
+	node_backbun.fill('green');
+
+	var node_meat = new Circle(posx, posy, 35, 100);
+	node_meat.addTo(stage);
+	node_meat.fill('white');
+
+	var node_frontbun = new Circle(posx, posy, 30, 100);
+	node_frontbun.addTo(stage);
+	node_frontbun.fill('green');
+
+	var text = new Text('16');
+	text.attr({
+	  x: (posx-14), y: (posy - 9), textFillColor: 'black', opacity: 0.5,
+	  fontFamily: 'Arial', fontSize: 25, fontWeight: 'bold'
+	});
+	stage.addChild(text);
+}
+draw_a_16_node(50, 320);//[50][320] is at grid [3][0]
